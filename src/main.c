@@ -12,7 +12,7 @@
 #include "font.h"
 
 int main(int argc, char *args[]) {
-    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
     IMG_Init(IMG_INIT_PNG);
     
     SDL_Window *window;
@@ -24,7 +24,7 @@ int main(int argc, char *args[]) {
             SDL_WINDOWPOS_UNDEFINED,
             SCREEN_WIDTH,
             SCREEN_HEIGHT,
-            SDL_WINDOW_SHOWN
+            SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE
             );
     renderer = SDL_CreateRenderer(
             window,
